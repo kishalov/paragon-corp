@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  --color-main: #060305;
+  --color-accent: #2FFFCB;
+  --color-glow: #1A4238;
+  
+  --font-serif: var(--font-serif-pro), serif;
+  --font-sans: var(--font-sans-pro), sans-serif;
+}
+
+:root {
+  --bg-color: #060305;
+  --text-light: #FFFFFF;
+  --text-dark: #060305;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-light);
+  font-family: var(--font-sans);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+
+h1, .text-h1 {
+  font-family: var(--font-serif) !important;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+p, .text-desc {
+  font-family: var(--font-sans) !important;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+
+.text-ui, .bullet {
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+
+.text-on-light {
+  color: var(--text-dark);
+}
+
+
+.bg-glow-layer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, var(--color-glow) 0%, rgba(26, 66, 56, 0) 100%);
+  filter: blur(100px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+
+@media (max-width: 1024px) {
+  h1, .text-h1 { font-size: 42px; }
+  p, .text-desc { font-size: 18px; }
+  .bg-glow-layer { width: 600px; height: 600px; }
+}
+
+@media (max-width: 768px) {
+  h1, .text-h1 { font-size: 32px; }
+  p, .text-desc { font-size: 16px; }
+  .text-ui { font-size: 16px; }
+  .bg-glow-layer { width: 400px; height: 400px; filter: blur(60px); }
+}
