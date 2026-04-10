@@ -14,7 +14,7 @@ export default function ContactFooter() {
           <h2 className="text-h1 mb-8 md:mb-12 max-w-[400px]">Get in touch</h2>
           <div className="flex flex-col gap-4 font-sans text-[18px] md:text-[20px] text-white/60">
             <a href="mailto:paragoncorp@example.ru" className="hover:text-white transition-colors">paragoncorp@example.com</a>
-            <a href="tel:88001234567" className="hover:text-white transition-colors">8 800 123-45-67</a>
+            <a href="tel:1234567890" className="hover:text-white transition-colors">8 800 123-45-67</a>
           </div>
         </div>
 
