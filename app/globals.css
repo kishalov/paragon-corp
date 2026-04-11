@@ -60,7 +60,7 @@ p, .text-desc {
   width: 800px;
   height: 800px;
   background: radial-gradient(circle, var(--color-glow) 0%, rgba(26, 66, 56, 0) 100%);
-  filter: blur(100px);
+  filter: blur(60px);
   z-index: -1;
   pointer-events: none;
 }

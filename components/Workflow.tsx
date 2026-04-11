@@ -11,10 +11,10 @@ const steps = [
 
 export default function Workflow() {
   return (
-    <section className="relative w-full max-w-[1440px] mx-auto px-6 md:px-20 py-20 md:py-32 flex flex-col items-center overflow-hidden">
+    <section className="relative w-full max-w-[1440px] mx-auto px-6 md:px-20 py-20 md:py-32 flex flex-col items-center">
       
     
-      <div className="bg-glow-layer" />
+      <div className="bg-glow-layer"/>
 
       <div className="relative z-10 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         
@@ -26,7 +26,7 @@ export default function Workflow() {
                 <Squircle 
                   cornerRadius={12} 
                   cornerSmoothing={1} 
-                  className="relative w-[60px] md:w-[70px] h-[36px] md:h-[40px] bg-[#246050] flex items-center justify-center text-white font-sans font-bold text-[16px] md:text-[18px]"
+                  className="relative w-[60px] md:w-[70px] h-[36px] md:h-[40px] bg-[#00A47B] flex items-center justify-center text-white font-sans font-bold text-[16px] md:text-[18px]"
                 >
                   {step.id}
                 </Squircle>

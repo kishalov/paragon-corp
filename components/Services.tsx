@@ -3,16 +3,49 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { Squircle } from "@squircle-js/react";
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { 
+  ChevronLeft, 
+  ChevronRight, 
+  Layers,      // Comprehensive Solutions
+  Zap,         // Quick Turnaround
+  ShieldCheck, // Certified Quality
+  Globe,       // Global Shipping
+  Search,      // Hard-to-Find Parts
+  Tag          // Competitive Pricing
+} from 'lucide-react';
 import { AppButton } from './ui/AppButton';
 
 const services = [
-  { title: 'Comprehensive Solutions', desc: '' },
-  { title: 'Quick Turnaround Times', desc: '' },
-  { title: 'Certified Quality', desc: '' },
-  { title: 'Global Shipping', desc: '' },
-  { title: 'Expertise in Hard-to-Find Parts', desc: '' },
-  { title: 'Competitive Pricing', desc: '' },
+  { 
+    title: 'Comprehensive Solutions', 
+    desc: 'Full-cycle support for your business needs.', 
+    icon: Layers 
+  },
+  { 
+    title: 'Quick Turnaround Times', 
+    desc: 'Fast processing and immediate response.', 
+    icon: Zap 
+  },
+  { 
+    title: 'Certified Quality', 
+    desc: 'Strict adherence to international standards.', 
+    icon: ShieldCheck 
+  },
+  { 
+    title: 'Global Shipping', 
+    desc: 'Delivery to any point in the world.', 
+    icon: Globe 
+  },
+  { 
+    title: 'Expertise in Hard-to-Find Parts', 
+    desc: 'Locating rare components is our specialty.', 
+    icon: Search 
+  },
+  { 
+    title: 'Competitive Pricing', 
+    desc: 'Best market rates for premium service.', 
+    icon: Tag 
+  },
 ];
 
 export default function Services() {
@@ -57,49 +90,55 @@ export default function Services() {
         <div className="relative">
           <div className="overflow-hidden" ref={emblaRef}>
             <div className="flex gap-6">
-              {services.map((service, index) => (
-                <div key={index} className="flex-[0_0_100%] md:flex-[0_0_calc(33.333%-16px)] min-w-0">
-                  <Squircle 
-                    cornerRadius={50} 
-                    cornerSmoothing={1} 
-                    className="bg-[#246050]/70 h-[520px] p-10 flex flex-col items-center text-center justify-between"
-                  >
-                    <div className="flex flex-col gap-6">
-                      <h3 className="text-[32px] font-bold leading-tight font-serif text-white">
-                        {service.title}
-                      </h3>
-                      <p className="text-[18px] font-sans text-white leading-relaxed">
-                        {service.desc}
-                      </p>
-                    </div>
+              {services.map((service, index) => {
+                const Icon = service.icon;
+                return (
+                  <div key={index} className="flex-[0_0_100%] md:flex-[0_0_calc(33.333%-16px)] min-w-0">
+                    <Squircle 
+                      cornerRadius={50} 
+                      cornerSmoothing={1} 
+                      className="bg-white/90 h-[520px] p-10 flex flex-col items-center text-center justify-between"
+                    >
+                      <div className="text-[#00A47B] group-hover:text-[#00A47B] transition-colors duration-300">
+                        <Icon size={128} strokeWidth={1} />
+                      </div>
+                      <div className="flex flex-col gap-6">
+                        <h3 className="text-[32px] font-bold leading-tight font-serif text-black">
+                          {service.title}
+                        </h3>
+                        <p className="text-[18px] font-sans text-black leading-relaxed">
+                          {service.desc}
+                        </p>
+                      </div>
 
-                    <div className="relative group cursor-pointer">                    
-                      <AppButton text="Call Me" className="hidden sm:flex" />
-                    </div>
-                  </Squircle>
-                </div>
-              ))}
+                      <div className="relative group cursor-pointer">                    
+                        <AppButton text="Call Me" className="hidden sm:flex" />
+                      </div>
+                    </Squircle>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
           <button 
             onClick={scrollPrev} 
             disabled={!canScrollPrev}
-            className={`cursor-pointer absolute top-1/2 -left-4 md:-left-16 -translate-y-1/2 z-30 text-[#246050] transition-all duration-300 ${
+            className={`cursor-pointer absolute top-1/2 -left-4 md:-left-16 -translate-y-1/2 z-30 text-[#00A47B] transition-all duration-300 ${
               !canScrollPrev ? 'opacity-0 pointer-events-none' : 'hover:scale-110 active:scale-90'
             }`}
           >
-            <ChevronLeft size={60} strokeWidth={1} />
+            <ChevronLeft size={60} strokeWidth={2} />
           </button>
 
           <button 
             onClick={scrollNext} 
             disabled={!canScrollNext}
-            className={`cursor-pointer absolute top-1/2 -right-4 md:-right-16 -translate-y-1/2 z-30 text-[#246050] transition-all duration-300 ${
+            className={`cursor-pointer absolute top-1/2 -right-4 md:-right-16 -translate-y-1/2 z-30 text-[#00A47B] transition-all duration-300 ${
               !canScrollNext ? 'opacity-0 pointer-events-none' : 'hover:scale-110 active:scale-90'
             }`}
           >
-            <ChevronRight size={60} strokeWidth={1} />
+            <ChevronRight size={60} strokeWidth={2} />
           </button>
         </div>
 
@@ -110,7 +149,7 @@ export default function Services() {
               onClick={() => scrollTo(i)}
               className={`h-2.5 transition-all duration-500 rounded-full ${
                 i === selectedIndex 
-                  ? 'bg-[#246050] w-8' 
+                  ? 'bg-[#00A47B] w-8' 
                   : 'bg-[#246050] w-2.5 hover:bg-[#246050]/40'
               }`}
             />

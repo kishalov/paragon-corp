@@ -5,24 +5,25 @@ import { Squircle } from "@squircle-js/react";
 
 export default function About() {
   return (
-    <section id="about" className="relative w-full max-w-[1440px] mx-auto px-6 md:px-12 py-20 md:py-32 bg-[#060305] overflow-hidden">
+    /* Добавлен только overflow-visible, чтобы блюр не резался */
+    <section id="about" className="relative w-full max-w-[1440px] mx-auto px-6 md:px-12 py-20 md:py-32 bg-[#060305] overflow-visible">
       
       <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
         
-        
+        {/* ЛЕВАЯ ЧАСТЬ: Изображения */}
         <div className="relative w-full lg:w-1/2 h-[500px] md:h-[650px] flex items-center justify-center">
           
-          
+          {/* СВЕТОВОЙ ШЕЙП (без изменений, z-index: 0, opacity: 1) */}
           <div 
             className="absolute w-[300px] h-[300px] md:w-[600px] md:h-[600px] pointer-events-none z-0"
             style={{
               background: 'radial-gradient(circle, #1A4238 0%, rgba(6, 3, 5, 0) 100%)',
-              filter: 'blur(60px) md:blur(90px)',
+              filter: 'blur(10px)',
               transform: 'translateZ(0)',
             }}
           />
 
-          
+          {/* КАРТИНКА 1 (осталась в z-10) */}
           <div className="absolute top-0 left-0 w-[240px] md:w-[320px] h-[400px] md:h-[540px] z-10">
             <Squircle 
               cornerRadius={40} 
@@ -43,7 +44,7 @@ export default function About() {
             </Squircle>
           </div>
 
-          
+          {/* КАРТИНКА 2 (осталась в z-20) */}
           <div className="absolute bottom-0 right-0 w-[240px] md:w-[320px] h-[400px] md:h-[540px] z-20">
             <Squircle 
               cornerRadius={40} 
@@ -65,7 +66,7 @@ export default function About() {
           </div>
         </div>
 
-    
+        {/* ПРАВАЯ ЧАСТЬ */}
         <div className="relative z-30 w-full lg:w-1/2 flex flex-col items-start text-left">
           <h2 className="text-[32px] md:text-[56px] font-bold leading-[1.1] text-white mb-6 md:mb-10 text-h1 uppercase">
             Fearless Solutions

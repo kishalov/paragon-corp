@@ -20,19 +20,19 @@ export default function ContactFooter() {
 
         <form className="flex flex-col gap-6" onSubmit={(e) => e.preventDefault()}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Squircle cornerRadius={20} cornerSmoothing={1} className="bg-white/5 border border-white/10 p-1">
+            <Squircle cornerRadius={10} cornerSmoothing={1} className="bg-white/5 border border-white/10 p-1">
               <input type="text" placeholder="Name" className="w-full bg-transparent px-6 py-4 outline-none font-sans text-white placeholder:text-white/30" />
             </Squircle>
-            <Squircle cornerRadius={20} cornerSmoothing={1} className="bg-white/5 border border-white/10 p-1">
+            <Squircle cornerRadius={10} cornerSmoothing={1} className="bg-white/5 border border-white/10 p-1">
               <input type="email" placeholder="Email" className="w-full bg-transparent px-6 py-4 outline-none font-sans text-white placeholder:text-white/30" />
             </Squircle>
           </div>
-          <Squircle cornerRadius={24} cornerSmoothing={1} className="bg-white/5 border border-white/10 p-1">
+          <Squircle cornerRadius={10} cornerSmoothing={1} className="bg-white/5 border border-white/10 p-1">
             <textarea placeholder="Comment" rows={5} className="w-full bg-transparent px-6 py-4 outline-none font-sans text-white placeholder:text-white/30 resize-none" />
           </Squircle>
 
           <div className="mt-4 flex w-full md:w-auto self-start">
-            <AppButton text="Send Request" className='w-full'/>
+            <AppButton text="Send Request"/>
           </div>
         </form>
       </div>
