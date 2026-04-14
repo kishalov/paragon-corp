@@ -98,12 +98,13 @@ export default function Workflow() {
           >
             <Squircle cornerRadius={30} cornerSmoothing={1} className="w-full h-full overflow-hidden border border-white/10">
               <Image 
-                src="/flow-2.png" 
+                src="/flow1.png" 
                 alt="Jet in sky" 
                 fill 
                 className="object-cover" 
                 priority
                 sizes="(max-width: 768px) 160px, 240px" 
+                unoptimized
               />
             </Squircle>
           </motion.div>
@@ -116,12 +117,13 @@ export default function Workflow() {
           >
             <Squircle cornerRadius={30} cornerSmoothing={1} className="w-full h-full overflow-hidden border border-white/20 shadow-2xl">
               <Image 
-                src="/flow-1.png" 
+                src="/flow2.png" 
                 alt="Jet engine" 
                 fill 
                 className="object-cover" 
                 priority
                 sizes="(max-width: 768px) 180px, 280px" 
+                unoptimized
               />
             </Squircle>
           </motion.div>
@@ -134,12 +136,13 @@ export default function Workflow() {
           >
             <Squircle cornerRadius={30} cornerSmoothing={1} className="w-full h-full overflow-hidden border border-white/5 opacity-80 md:opacity-100">
               <Image 
-                src="/flow-3.png" 
+                src="/flow3.png" 
                 alt="Jet on runway" 
                 fill 
                 className="object-cover" 
                 priority
                 sizes="(max-width: 768px) 140px, 220px" 
+                unoptimized
               />
             </Squircle>
           </motion.div>

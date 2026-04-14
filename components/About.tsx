@@ -110,12 +110,13 @@ export default function About() {
             >
               <div className="relative w-full h-full">
                 <Image 
-                  src="/about-2.png" 
+                  src="/about2.png" 
                   alt="Aviation 2" 
                   fill 
                   className="object-cover"
                   priority
                   sizes="(max-width: 768px) 240px, 320px"
+                  unoptimized
                 />
               </div>
             </Squircle>
