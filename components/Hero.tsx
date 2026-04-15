@@ -1,12 +1,11 @@
 'use client';
 
-import React from 'react';
 import Image from 'next/image';
 import { Squircle } from "@squircle-js/react";
 import { motion, Variants } from 'framer-motion';
 import { AppButton } from './ui/AppButton';
+import { ContactPopup } from './ui/PopupForm';
 
-// Явно типизируем варианты для устранения ошибок TS
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
@@ -33,10 +32,10 @@ const itemVariants: Variants = {
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col items-center pt-6 pb-20 overflow-hidden">
-      {/* Слой свечения (предполагается, что стили в globals.css) */}
+
       <div className="bg-glow-layer" />
 
-      {/* Анимированный хедер */}
+
       <motion.header 
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -66,18 +65,19 @@ export default function Hero() {
             </a>
           ))}
         </nav>
-
+          <ContactPopup>
         <AppButton text="Call Me" className="hidden sm:flex" />
+            
+          </ContactPopup>
       </motion.header>
 
-      {/* Основной контент */}
       <motion.div 
         className="relative z-10 flex flex-col items-center w-full mt-12 md:mt-20 px-6"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        {/* Заголовок */}
+      
         <motion.h1 
           variants={itemVariants}
           className="text-h1 text-center mb-10 md:mb-16 max-w-[90vw] text-white"
@@ -86,10 +86,8 @@ export default function Hero() {
           uninterrupted flights.
         </motion.h1>
 
-        {/* Центральный блок с визуалом */}
         <div className="relative w-full max-w-[1070px] aspect-[4/3] md:aspect-[1070/320] flex items-center justify-center">
           
-          {/* Фон в сквиркле */}
           <motion.div 
             variants={itemVariants}
             className="w-full h-full"
@@ -106,13 +104,12 @@ export default function Hero() {
             </Squircle>
           </motion.div>
 
-          {/* Самолет с анимацией вылета и парения */}
           <motion.div 
             className="absolute w-[130%] md:w-[140%] h-[130%] md:h-[140%] z-20 pointer-events-none top-0 left-1/2"
             initial={{ x: "-40%", y: "-10%", opacity: 0, scale: 0.9 }}
             animate={{ 
               x: "-50%", 
-              y: ["-25%", "-28%", "-25%"], // Бесконечное парение
+              y: ["-25%", "-28%", "-25%"],
               opacity: 1, 
               scale: 1 
             }}
@@ -139,7 +136,6 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Описание и кнопка */}
         <motion.div 
           variants={itemVariants}
           className="mt-12 md:mt-16 max-w-[840px] text-center flex flex-col items-center"
@@ -147,7 +143,10 @@ export default function Hero() {
           <p className="mb-8 md:mb-12 text-white text-sm md:text-base leading-relaxed opacity-80">
             Welcome to the world of Aerodeals, where we ensure your flights run smoothly through expert management of aviation parts.
           </p>
+          <ContactPopup>
+
           <AppButton text="Get in Touch" />
+          </ContactPopup>
         </motion.div>
       </motion.div>
     </section>

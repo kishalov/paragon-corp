@@ -11,7 +11,7 @@ const steps = [
   { id: '03', text: 'We recognize that AOG situations require immediate action to minimize downtime. Our 24/7 AOG parts support ensures your aircraft returns to service quickly, helping you avoid costly delays.' },
 ];
 
-// Варианты для контейнера списка
+
 const listVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
@@ -20,7 +20,7 @@ const listVariants: Variants = {
   }
 };
 
-// Варианты для каждого шага
+
 const stepVariants: Variants = {
   hidden: { opacity: 0, x: -30 },
   visible: { 
@@ -30,7 +30,6 @@ const stepVariants: Variants = {
   }
 };
 
-// Варианты для изображений (появление с разной стороны)
 const imageVariants: Variants = {
   hidden: { opacity: 0, scale: 0.8 },
   visible: (custom: number) => ({
@@ -39,7 +38,7 @@ const imageVariants: Variants = {
     transition: { 
       duration: 0.8, 
       delay: custom * 0.2, 
-      ease: [0.21, 1.11, 0.81, 0.99] // Пружинистый эффект
+      ease: [0.21, 1.11, 0.81, 0.99] 
     }
   })
 };
@@ -52,7 +51,6 @@ export default function Workflow() {
 
       <div className="relative z-10 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         
-        {/* ЛЕВАЯ ЧАСТЬ: Текстовые шаги */}
         <motion.div 
           className="flex flex-col gap-10 md:gap-16 order-2 lg:order-1"
           variants={listVariants}
@@ -82,7 +80,6 @@ export default function Workflow() {
           ))}
         </motion.div>
 
-        {/* ПРАВАЯ ЧАСТЬ: Группа изображений */}
         <motion.div 
           className="relative w-full h-[450px] md:h-[600px] order-1 lg:order-2"
           initial="hidden"
@@ -90,7 +87,6 @@ export default function Workflow() {
           viewport={{ once: true }}
         >
           
-          {/* Изображение 2 (Верхнее правое) */}
           <motion.div 
             custom={1}
             variants={imageVariants}
@@ -109,7 +105,6 @@ export default function Workflow() {
             </Squircle>
           </motion.div>
 
-          {/* Изображение 1 (Центральное, самое важное) */}
           <motion.div 
             custom={0}
             variants={imageVariants}
@@ -128,7 +123,6 @@ export default function Workflow() {
             </Squircle>
           </motion.div>
 
-          {/* Изображение 3 (Нижнее правое) */}
           <motion.div 
             custom={2}
             variants={imageVariants}

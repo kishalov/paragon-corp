@@ -1,14 +1,27 @@
 import { Squircle } from "@squircle-js/react";
 
-export const AppButton = ({ text, onClick, className }: { text: string; onClick?: () => void; className?: string }) => {
+export const AppButton = ({ 
+  text, 
+  onClick, 
+  className, 
+  disabled
+}: { 
+  text: string; 
+  onClick?: () => void; 
+  className?: string;
+  disabled?: boolean;
+}) => {
   return (
-      <Squircle cornerRadius={10} cornerSmoothing={1} asChild>
-        <button
-          onClick={onClick}
-          className="bg-[#00A47B] text-white px-10 py-4 font-sans text-[18px] font-bold tracking-wider hover:opacity-80 active:scale-95 transition-all cursor-pointer"
-        >
-          {text}
-        </button>
-      </Squircle>
+    <Squircle cornerRadius={10} cornerSmoothing={1} asChild>
+      <button
+        disabled={disabled}
+        onClick={onClick}
+        className={`bg-[#00A47B] text-white px-10 py-4 font-sans text-[18px] font-bold tracking-wider transition-all 
+          ${disabled ? 'opacity-50 cursor-not-allowed' : 'hover:opacity-80 active:scale-95 cursor-pointer'} 
+          ${className}`}
+      >
+        {text}
+      </button>
+    </Squircle>
   );
 };

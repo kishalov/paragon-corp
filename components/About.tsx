@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { Squircle } from "@squircle-js/react";
 import { motion, Variants } from 'framer-motion';
 
-// Анимация для текстового блока
 const textVariants: Variants = {
   hidden: { opacity: 0, x: 50 },
   visible: { 
@@ -15,7 +14,6 @@ const textVariants: Variants = {
   }
 };
 
-// Анимация для контейнера картинок
 const imageContainerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
@@ -42,7 +40,6 @@ export default function About() {
     >
       <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
         
-        {/* ЛЕВАЯ ЧАСТЬ: Изображения */}
         <motion.div 
           className="relative w-full lg:w-1/2 h-[500px] md:h-[650px] flex items-center justify-center"
           variants={imageContainerVariants}
@@ -51,7 +48,6 @@ export default function About() {
           viewport={{ once: true, margin: "-100px" }}
         >
           
-          {/* СВЕТОВОЙ ШЕЙП с пульсацией */}
           <motion.div 
             className="absolute w-[300px] h-[300px] md:w-[600px] md:h-[600px] pointer-events-none z-0"
             animate={{ 
@@ -70,11 +66,9 @@ export default function About() {
             }}
           />
 
-          {/* КАРТИНКА 1 (Левая верхняя) */}
           <motion.div 
             className="absolute top-0 left-0 w-[240px] md:w-[320px] h-[400px] md:h-[540px] z-10"
             variants={singleImageVariants}
-            /* Легкий эффект при наведении */
             whileHover={{ y: -10, transition: { duration: 0.3 } }}
           >
             <Squircle 
@@ -96,7 +90,6 @@ export default function About() {
             </Squircle>
           </motion.div>
 
-          {/* КАРТИНКА 2 (Правая нижняя) */}
           <motion.div 
             className="absolute bottom-0 right-0 w-[240px] md:w-[320px] h-[400px] md:h-[540px] z-20"
             variants={singleImageVariants}
@@ -123,7 +116,6 @@ export default function About() {
           </motion.div>
         </motion.div>
 
-        {/* ПРАВАЯ ЧАСТЬ */}
         <motion.div 
           className="relative z-30 w-full lg:w-1/2 flex flex-col items-start text-left"
           initial="hidden"

@@ -14,6 +14,7 @@ import {
   Tag          // Competitive Pricing
 } from 'lucide-react';
 import { AppButton } from './ui/AppButton';
+import { ContactPopup } from './ui/PopupForm';
 
 const services = [
   { 
@@ -112,7 +113,10 @@ export default function Services() {
                       </div>
 
                       <div className="relative group cursor-pointer">                    
+                        <ContactPopup>
                         <AppButton text="Call Me" className="hidden sm:flex" />
+
+                        </ContactPopup>
                       </div>
                     </Squircle>
                   </div>
