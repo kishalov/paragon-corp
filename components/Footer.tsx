@@ -98,7 +98,7 @@ export default function ContactFooter() {
         </div>
 
         <div className="text-center font-sans text-[12px] text-white/30 lg:pb-2 order-3 lg:order-2">
-          Paragon Corp. All rights reserved. 2023
+          Paragon Corp. All rights reserved. 2026
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-x-8 gap-y-4 font-sans text-[14px] text-white/60 text-center lg:text-right order-2 lg:order-3">
