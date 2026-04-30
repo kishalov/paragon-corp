@@ -81,7 +81,7 @@ export default function Services() {
   const scrollTo = useCallback((index: number) => emblaApi?.scrollTo(index), [emblaApi]);
 
   return (
-    <section className="relative w-full max-w-[1440px] mx-auto px-6 md:px-20 py-32 overflow-hidden">
+    <section className="relative w-full max-w-[1440px] mx-auto px-6 md:px-20 py-32 overflow-hidden" id="services">
       
       <div className="bg-glow-layer" />
 
@@ -112,12 +112,12 @@ export default function Services() {
                         </p>
                       </div>
 
-                      <div className="relative group cursor-pointer">                    
+                      {/* <div className="relative group cursor-pointer">                    
                         <ContactPopup>
                         <AppButton text="Call Me" className="hidden sm:flex" />
 
                         </ContactPopup>
-                      </div>
+                      </div> */}
                     </Squircle>
                   </div>
                 );

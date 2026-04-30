@@ -6,6 +6,13 @@ import { motion, Variants } from 'framer-motion';
 import { AppButton } from './ui/AppButton';
 import { ContactPopup } from './ui/PopupForm';
 
+const NAV_LINKS = [
+  { name: 'About Us', href: '#about' },
+  { name: 'What We Do', href: '#services' },
+  { name: 'Quality Assurance', href: '#quality' },
+  { name: 'Contact', href: '#contact' },
+];
+
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
@@ -30,45 +37,51 @@ const itemVariants: Variants = {
 };
 
 export default function Hero() {
+
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string) => {
+    e.preventDefault();
+    const targetId = href.replace('#', '');
+    const elem = document.getElementById(targetId);
+    
+    // Если используешь scroll-behavior: smooth в CSS, достаточно просто этого:
+    elem?.scrollIntoView({
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <section className="relative min-h-screen flex flex-col items-center pt-6 pb-20 overflow-hidden">
 
       <div className="bg-glow-layer" />
 
 
-      <motion.header 
+<motion.header 
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="bg-white p-2 rounded-3xl relative z-50 w-[calc(100%-2rem)] max-w-[1440px] md:p-4 flex justify-between items-center transition-all shadow-lg"
+        className="bg-white p-2 rounded-3xl relative z-50 w-[calc(100%-2rem)] max-w-[1440px] md:p-4 flex justify-between items-center shadow-lg"
       >
         <div className="flex-shrink-0">
-          <Image 
-            src="/logo.svg" 
-            alt="Paragon Corp" 
-            width={180} 
-            height={50} 
-            className="w-[140px] md:w-[180px] h-auto"
-            priority 
-          />
+          <Image src="/logo.svg" alt="Logo" width={180} height={50} className="w-[140px] md:w-[180px]" priority />
         </div>
         
         <nav className="hidden lg:flex gap-10">
-          {['About Us', 'What We Do', 'Quality Assurance', 'Contact'].map((item) => (
+          {NAV_LINKS.map((link) => (
             <a 
-              key={item} 
-              href="#" 
+              key={link.name} 
+              href={link.href} 
+              onClick={(e) => handleScroll(e, link.href)} // Добавляем обработчик
               className="relative w-fit transition-colors group py-2 block text-black hover:text-[#246050] font-medium"
             >
-              {item}
+              {link.name}
               <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#246050] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
             </a>
           ))}
         </nav>
-          <ContactPopup>
-        <AppButton text="Call Me" className="hidden sm:flex" />
-            
-          </ContactPopup>
+
+        <ContactPopup>
+          <AppButton text="Get in Touch" className="hidden sm:flex" />
+        </ContactPopup>
       </motion.header>
 
       <motion.div 

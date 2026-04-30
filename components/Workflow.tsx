@@ -45,7 +45,7 @@ const imageVariants: Variants = {
 
 export default function Workflow() {
   return (
-    <section className="relative w-full max-w-[1440px] mx-auto px-6 md:px-20 py-20 md:py-32 flex flex-col items-center">
+    <section className="relative w-full max-w-[1440px] mx-auto px-6 md:px-20 py-20 md:py-32 flex flex-col items-center" id="quality">
       
       <div className="bg-glow-layer"/>
 

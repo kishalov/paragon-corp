@@ -37,7 +37,7 @@ export default function ContactFooter() {
   };
 
   return (
-    <footer className="relative w-full max-w-[1440px] mx-auto px-6 md:px-20 pt-20 md:pt-32 pb-12 overflow-hidden bg-[#060305]">
+    <footer className="relative w-full max-w-[1440px] mx-auto px-6 md:px-20 pt-20 md:pt-32 pb-12 overflow-hidden bg-[#060305]" id="contact">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 mb-20 md:mb-40 relative z-10">
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
           <h2 className="text-h1 mb-8 md:mb-12 max-w-[400px]">Get in touch</h2>
