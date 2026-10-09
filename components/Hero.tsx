@@ -154,7 +154,7 @@ export default function Hero() {
           className="mt-12 md:mt-16 max-w-[840px] text-center flex flex-col items-center"
         >
           <p className="mb-8 md:mb-12 text-white text-sm md:text-base leading-relaxed opacity-80">
-            Welcome to the world of Aerodeals, where we ensure your flights run smoothly through expert management of aviation parts.
+            Welcome to the world of Paragon Corp, where we ensure your flights run smoothly through expert management of aviation parts.
           </p>
           <ContactPopup>
 
