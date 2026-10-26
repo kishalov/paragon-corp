@@ -95,8 +95,7 @@ export default function Hero() {
           variants={itemVariants}
           className="text-h1 text-center mb-10 md:mb-16 max-w-[90vw] text-white"
         >
-          Your fearless partner for<br />
-          uninterrupted flights.
+          Your trusted partner for non-stop flights
         </motion.h1>
 
         <div className="relative w-full max-w-[1070px] aspect-[4/3] md:aspect-[1070/320] flex items-center justify-center">

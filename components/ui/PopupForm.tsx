@@ -42,8 +42,8 @@ export function ContactPopup({ children }: ContactPopupProps) {
 
     try {
       await emailjs.sendForm(
-        'website_popup_form',
-        'website_request',
+        'paragon_email_service',
+        'website_popup_request',
         formRef.current,
         '8PqiZkmb2Y9quu5o2'  
       );
